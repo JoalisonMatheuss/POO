@@ -27,9 +27,11 @@ class ContaEnergia{
     }
     public void setCalcuclarConsumo(){
       if (consumo == 50){
-        System.out.println("R$ "+10.00);
-      } else if(consumo > 50){
-        System.out.println(consumo*0.20);
+        System.out.println(10.00);
+      } else if(consumo <= 100){
+        System.out.println((10+consumo-50)*0.20);
+        } else{
+          System.out.println((10+consumo-50)*0.35);
       }
     }
 }
