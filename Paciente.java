@@ -3,7 +3,7 @@ class Paciente{
   private double peso;
   private double altura;
 
-  //COnstrutor
+  //Construtor
   public Paciente(double peso, double altura){
     this.peso = peso;
     this.altura = altura; 
@@ -29,29 +29,30 @@ class Paciente{
 
   public void Diagnostico(){
     double imc = calcularIMC();
+    System.out.println(" \n ************** Paciente ************** \n");
     if (imc < 16){
-      System.out.println("Baixo Peso Muito Grave");
+      System.out.println("        Baixo Peso Muito Grave");
     } else if(imc >= 16 && imc < 16.99){
-      System.out.println("Peso Grave");
+      System.out.println("        Peso Grave");
     } else if(imc >= 17 && imc <= 18.49){
-      System.out.println("Baixo Peso");
+      System.out.println("        Baixo Peso");
     } else if(imc >= 18.50 && imc <= 24.99){
-      System.out.println("Peso Normal");
+      System.out.println("        Peso Normal");
     } else if(imc >= 25 && imc <= 29.99){
-      System.out.println("Sobrepeso");
+      System.out.println("        Sobrepeso");
     } else if(imc >= 30 && imc <= 34.99){
-      System.out.println("Obesidade grau I");
+      System.out.println("        Obesidade grau I");
     } else if(imc >= 35 && imc <= 39.99){
-      System.out.println("Obesidade grau II");
+      System.out.println("        Obesidade grau II");
     } else{
-      System.out.println("Obesidade grau II");
+      System.out.println("        Obesidade grau II");
     }
   }
 }
 
 public class Main{
   public static void main(String[] args){
-    Paciente paciente = new Paciente(40.00, 1.70);
+    Paciente paciente = new Paciente(60.54, 1.70);
     paciente.Diagnostico();
   }
 }
