@@ -2,16 +2,16 @@ class Candidato{
   //Atributos
   private String nome;
   private String partido;
-  private int votos;
+  private int numeroVotos;
 
   //Construtor
-  public Candidato(String nome, String partido, int votos){
+  public Candidato(String nome, String partido, int numeroVotos){
     this.nome = nome;
     this.partido = partido;
-    this.votos = votos;
+    this.numeroVotos = numeroVotos;
   }
 
-  //Métodos
+  //MÃ©todos
   public String getNome(){
     return nome;
   }
@@ -24,26 +24,42 @@ class Candidato{
   public void setPartido(String partido){
     this.partido = partido;
   }
-  public int getVotos(){
-    return votos;
+  public int getNumeroVotos(){
+    return numeroVotos;
   }
-  public void setVotos(int votos){
-    this.votos = votos;
-  }
-
   public void NumeroVotos(){
-    if (votos == 1){
-      System.out.println(votos);
-    } else if (votos == 2)
-
+    
   }
 }
 
 public class Main{
-  public static vois main(String[] args){
-    Candidato candidato = new Candidato("José", "Felicidade", 1);
-    Candidato candidato2 = new Candidato("João", "Esperança", 2);
-    candidato.NumeroVotos();
-    candidato2.NumeroVotos();
+  public static void main(String[] args){
+    Candidato candidato = new Candidato(System.in);
+    System.out.println("Digite 1, 2, 3 ou 0: ");
+    int voto = Candidato.next();
+
   }
+}
+
+class Urna{
+  //Atributos
+  private Candidato candidato;
+
+  //Cosntrutor
+  public Urna(Candidato candidato){
+    this.candidato = candidato;
+  }
+
+  //MÃ©todos
+
+  public void votar(){}
+
+  public void exibirTotalDeVotos(){}
+
+  public void exibirTotalDeVotosBrancosNulos(){}
+
+  public void exibirTotalDeVotosDosCandidatos(){}
+
+  public void  exibirDadosDoCandidatoVencedor(){}
+
 }
