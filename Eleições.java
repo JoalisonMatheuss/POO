@@ -1,17 +1,22 @@
+import java.util.Scanner;
+
 class Candidato{
   //Atributos
-  private String nome;
-  private String partido;
-  private int numeroVotos;
+  public String nome;
+  public String partido;
+  public int numeroVotos;
+  public int votos;
 
   //Construtor
   public Candidato(String nome, String partido, int numeroVotos){
     this.nome = nome;
     this.partido = partido;
     this.numeroVotos = numeroVotos;
+    this.votos = 0;
   }
 
   //Métodos
+
   public String getNome(){
     return nome;
   }
@@ -27,16 +32,20 @@ class Candidato{
   public int getNumeroVotos(){
     return numeroVotos;
   }
-  public void NumeroVotos(){
+  public void  NumeroVotos(){
     
   }
 }
 
 public class Main{
   public static void main(String[] args){
-    Candidato candidato = new Candidato(System.in);
-    System.out.println("Digite 1, 2, 3 ou 0: ");
-    int voto = Candidato.next();
+    Scanner teclado = new Scanner(System.in);
+    int votos = teclado.nextInt();
+
+    Candidato candidato = new Candidato("José", "Felicidade", votos);
+    Candidato candidato2 = new Candidato("João", "Esperança", votos);
+
+    
 
   }
 }
@@ -44,6 +53,7 @@ public class Main{
 class Urna{
   //Atributos
   private Candidato candidato;
+
 
   //Cosntrutor
   public Urna(Candidato candidato){
