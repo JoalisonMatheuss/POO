@@ -30,7 +30,7 @@ class Candidato{
   public int getNumeroVotos(){
     return numeroVotos;
   }
-  public void Votos(){
+  public void NumeroVotos(){
     numeroVotos +=1;
   }
 }
@@ -58,21 +58,25 @@ class Urna{
     int voto;
 
     do{
-      System.out.println("-----------------------------------------");
-      System.out.println("\nDigite 1 para Candidato1");
-      System.out.println("Digite 2 para Candidato2");
-      System.out.println("Digite 3 para Branco Nulo");
-      System.out.println("Digite 0 para Encerrar \n");
+      System.out.println("------------------ MENU -----------------");
+      System.out.println("|       Digite 1 para Candidato1        |");
+      System.out.println("|       Digite 2 para Candidato2        |");
+      System.out.println("|       Digite 3 para Branco Nulo       |");
+      System.out.println("|       Digite 0 para Encerrar          |");
       System.out.println("-----------------------------------------");
       voto = e.nextInt();
-
+      if (voto !=0){
+        System.out.println("\nVoto Realizado");
+      } else{
+        System.out.println("\nSessão encerada");
+      }
 
       if (voto == 1){
-        cand1.Votos();
+        cand1.NumeroVotos();
         TtlVotos += 1;
       }
       else if (voto == 2){
-        cand2.Votos();
+        cand2.NumeroVotos();
         TtlVotos += 1;
       }
       else if (voto == 3){
@@ -83,7 +87,7 @@ class Urna{
   }
 
   public void exibirTotalDeVotos(){
-    System.out.println("Total de votos: " + TtlVotos);
+    System.out.println("\nTotal de votos: " + TtlVotos);
   }
 
   public void exibirTotalDeVotosBrancosNulos(){
@@ -91,9 +95,9 @@ class Urna{
   }
 
   public void exibirTotalDeVotosDosCandidatos(){
-    System.out.println("Total de votos Candidato 1: +" + cand1);
+    System.out.println("Total de votos Candidato 1: " + cand1.getNumeroVotos());
 
-    System.out.println(" Total de Votos Candidato 2: " + cand2);
+    System.out.println("Total de Votos Candidato 2: " + cand2.getNumeroVotos());
   }
 
   public void  exibirDadosDoCandidatoVencedor(){
@@ -114,6 +118,8 @@ class Urna{
 public class Main{
   public static void main(String[] args){
     Scanner teclado = new Scanner(System.in);
+
+    System.out.println("\n*************** ELEIÇÕES ***************\n");
 
     System.out.println("Nome do 1º Candidato:");
     String nome = teclado.nextLine();
