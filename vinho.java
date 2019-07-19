@@ -45,6 +45,9 @@ public abstract class Vinho{
 	    this.valorDeCompra = valorDeCompra;
 	  }
 	  public abstract double CalcularValor();
+	  
+	  public abstract void informacoes();
+
 	}
 
 
@@ -74,8 +77,15 @@ public class VinhoBranco extends Vinho{
 			  return getValorDeCompra();
 		  }
 	  }
+	  
+	  public void informacoes() {
+		  System.out.println("Nome: " +getNome());
+		  System.out.println("tipoDeUva: " +getTipoDeUva());
+		  System.out.println("fabricante: " +getFabricante());
+		  System.out.println("dataDeFabricacao: " +getDataDeFabricacao());
+		  System.out.println("valorDeCompra: " +getValorDeCompra());
+	  }
 	}
-
 
 
 package Vetor;
@@ -103,8 +113,16 @@ public class VinhoTinto extends Vinho{
 			  return getValorDeCompra();
 		  }
 	  }
+	  
+	  public void informacoes() {
+		  System.out.println("Nome: " +getNome());
+		  System.out.println("tipoDeUva: " +getTipoDeUva());
+		  System.out.println("fabricante: " +getFabricante());
+		  System.out.println("dataDeFabricacao: " +getDataDeFabricacao());
+		  System.out.println("valorDeCompra: " +getValorDeCompra());
+	  }
+	  
 	}
-
 
 
 
@@ -138,8 +156,20 @@ public class Adega {
 			}
 		}
 	}
-  
-  double valorTotal = 0;
+	
+	int totalGarrafas = 0;
+	public void TotalGarrafas() {
+		for(int i = 0; i <= 20; i++) {
+			for(int j = 0; j <= 20; j++) {
+				if(!(zeColmeia == null)) {
+					totalGarrafas += 1;
+				} 
+			}
+		}
+	}
+	
+	
+	double valorTotal = 0;
 	public void ValorTotalCompra() {
 		for(int i = 0; i <= 20; i++) {
 			for(int j = 0; i <= 10; j++) {
@@ -149,4 +179,30 @@ public class Adega {
 			}
 		}
 	}
+	
+	double valorTotalVendas = 0;
+	public void ValorVendas() {
+		for(int i = 0; i <= 20; i++) {
+			for(int j = 0; j <+ 10; j++) {
+				if(!(zeColmeia == null)) {
+					if (zeColmeia[i][j] instanceof VinhoBranco) {
+						valorTotalVendas = zeColmeia[i][j].getValorDeCompra();
+					}
+					else {
+						valorTotalVendas = zeColmeia[i][j].getValorDeCompra();					}
+				}
+			}
+		}
+	}
+	
+	
+	public void ObterVinhos(int linha, int coluna) {
+		if(zeColmeia[linha][coluna] == null) {
+			System.out.println("Sem vinho");
+		}
+		if(zeColmeia[linha][coluna] != null) {
+			System.out.println("Vinho");
+		}
+	}
+	
 }
