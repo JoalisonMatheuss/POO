@@ -495,7 +495,30 @@ public class Principal {
 
 	public static void main(String[] args) {
 		
+		Estacionamento esta = new Estacionamento();
 		
+		Veiculo moto = new Moto(10, "Moto adulterada", 2012, 1000.00, "123-abc", 20);
+		Veiculo carro = new Carro(100, "Carro adulterada", 2014, 1001.00, "124-abc", 50,4);
+		Veiculo caminhao = new Caminhao(100, "Caminhão adulterada", 2015, 1002.00, "125-abc", 50,4);
+		Veiculo onibus = new Onibus(100, "Carro adulterada", 2014, 1003.00, "126-abc", 50,4);
+		
+		esta.AdicionarVeiculo(moto);
+		esta.AdicionarVeiculo(carro);
+		esta.AdicionarVeiculo(caminhao);
+		esta.AdicionarVeiculo(onibus);
+		
+		esta.ContagemPorTipo();
+		
+		esta.VeiculoMenorValor();
+		
+		esta.ValorTotalFrota();
+		
+		esta.AcelerarTodos();
+		
+		esta.VeiculosCadastrados();
+		
+		esta.FrearTodos();
 	}
 
 }
+
