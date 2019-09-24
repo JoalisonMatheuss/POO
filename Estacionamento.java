@@ -363,12 +363,12 @@ public class Estacionamento {
 	private List<Veiculo> Estacionamentos = new ArrayList<>();
 	
 	
-	public Estacionamento() {
-	}
 	
 	public void AdicionarVeiculo(Veiculo veiculo) {
-		if(Estacionamentos.get(0) != null) {
-			Estacionamentos.add(veiculo);
+		for (int i = 0; i <= 100; i++) {
+			if (Estacionamentos.get(i) != null) {
+				Estacionamentos.add(veiculo);
+			}
 		}
 	}
 	
