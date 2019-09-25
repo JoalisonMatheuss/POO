@@ -9,7 +9,7 @@ public interface veiculo {
 
 package atividade_3_bim;
 
-public abstract class Veiculo {
+public abstract class Veiculo implements veiculo{
 	
 	private int Velocidade;
 	private String Descricao;
