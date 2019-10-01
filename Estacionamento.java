@@ -352,6 +352,11 @@ package atividade_3_bim;
 import java.util.ArrayList;
 import java.util.List;
 
+package atividade_3_bim;
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class Estacionamento {
 	private List<Veiculo> Estacionamentos = new ArrayList<>();
 	private int QuantMotos = 0, QuantCarros = 0, QuantCaminhao = 0, QuantOnibus = 0;
@@ -403,10 +408,28 @@ public class Estacionamento {
 	
 	
 	
-	/*public void MaiorQuantidade() {
-		int maior[] = new int[4];
-		maior[0].add(QuantMotos);
-	} */
+	public void MaiorQuantidade() {
+		int maior[] = {QuantMotos, QuantCarros, QuantCaminhao, QuantOnibus};
+		int maior2 = maior[0];
+		for(int i = 0; i < maior.length; i++) {
+			if (maior2 < maior[i]) {
+				maior2 = maior[i];
+			}
+		}
+		if (maior2 == maior[0]) {
+			System.out.println("Moto tá em maior quantidade");
+		}
+		if (maior2 == maior[1]) {
+			System.out.println("Carro tá em maior quantidade");
+		}
+		if (maior2 == maior[2]) {
+			System.out.println("Caminhão tá em maior quantidade");
+		}
+		if (maior2 == maior[3]) {
+			System.out.println("Ônibus tá em maior quantidade");
+		}
+		System.out.println("Maior Quantidade de Veiculos: " +maior2);
+	} 
 	
 	
 	
@@ -425,20 +448,7 @@ public class Estacionamento {
 	
 	public void AcelerarTodos() {
 		for (int i = 0; i < Estacionamentos.size(); i++) {
-			if (Estacionamentos.get(i) != null) {
-				if (Estacionamentos.get(i) instanceof Moto) {
-					Estacionamentos.get(i).Acelerar();
-				}
-				if (Estacionamentos.get(i) instanceof Carro) {
-					Estacionamentos.get(i).Acelerar();
-				}
-				if (Estacionamentos.get(i) instanceof Caminhao) {
-					Estacionamentos.get(i).Acelerar();
-				}
-				if (Estacionamentos.get(i) instanceof Onibus) {
-					Estacionamentos.get(i).Acelerar();
-				}
-			}
+			Estacionamentos.get(i).Acelerar();
 		}
 	}
 	
@@ -459,24 +469,12 @@ public class Estacionamento {
 	
 	public void FrearTodos() {
 		for (int i = 0; i < Estacionamentos.size(); i++) {
-			if (Estacionamentos.get(i) != null) {
-				if (Estacionamentos.get(i) instanceof Moto) {
-					Estacionamentos.get(i).Frear();
-				}
-				if (Estacionamentos.get(i) instanceof Carro) {
-					Estacionamentos.get(i).Frear();
-				}
-				if (Estacionamentos.get(i) instanceof Caminhao) {
-					Estacionamentos.get(i).Frear();
-				}
-				if (Estacionamentos.get(i) instanceof Onibus) {
-					Estacionamentos.get(i).Frear();
-				}
-			}
+			Estacionamentos.get(i).Frear();
 		}
 	}
 
 }
+
 
 
 package atividade_3_bim;
@@ -506,6 +504,8 @@ public class Principal {
 		
 		esta.VeiculoMenorValor();
 
+		esta.MaiorQuantidade();
+		
 		esta.ValorTotalFrota();
 		
 		esta.AcelerarTodos();
@@ -513,6 +513,7 @@ public class Principal {
 		esta.VeiculosCadastrados();
 		
 		esta.FrearTodos();
+		
 	}
 
 }
