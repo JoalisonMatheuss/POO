@@ -347,10 +347,6 @@ public class Onibus extends Veiculo {
 }
 
 
-package atividade_3_bim;
-
-import java.util.ArrayList;
-import java.util.List;
 
 package atividade_3_bim;
 
@@ -395,14 +391,38 @@ public class Estacionamento {
 	public void VeiculoMenorValor() {
 		if (Estacionamentos.size() > 0) {
 			double MenorValor = Estacionamentos.get(0).getValor();
+			Veiculo tipo = Estacionamentos.get(0);
 				for(int i = 1; i < Estacionamentos.size(); i++) {		
 					if(Estacionamentos.get(i).getValor() < MenorValor ) {
 						MenorValor = Estacionamentos.get(i).getValor();
+						tipo = Estacionamentos.get(i);
 					}
 					
 				}
-				System.out.printf("\nVeiculo de Menor Valor:  %.2f", (MenorValor));
-				System.out.println();
+				if (tipo instanceof Moto) {
+					System.out.println("\n-------------------- MenorValor ----------------------");
+					System.out.println("\nO tipo é Moto");
+					System.out.printf("Veiculo de Menor Valor:  %.2f\n", (MenorValor));
+					System.out.println("------------------------------------------------------\n");
+				}
+				if (tipo instanceof Carro) {
+					System.out.println("\n-------------------- MenorValor ----------------------");
+					System.out.println("\nO tipo é Carro");
+					System.out.printf("Veiculo de Menor Valor:  %.2f\n", (MenorValor));
+					System.out.println("------------------------------------------------------\n");
+				}
+				if (tipo instanceof Caminhao) {
+					System.out.println("\n-------------------- MenorValor ----------------------");
+					System.out.println("\nO tipo é Caminhão");
+					System.out.printf("Veiculo de Menor Valor:  %.2f\n", (MenorValor));
+					System.out.println("------------------------------------------------------\n");
+				}
+				if (tipo instanceof Onibus) {
+					System.out.println("\n-------------------- MenorValor ----------------------");
+					System.out.println("\nO tipo é Ônibus");
+					System.out.printf("Veiculo de Menor Valor:  %.2f\n", (MenorValor));
+					System.out.println("------------------------------------------------------\n");
+				}
 		}
 	}
 	
@@ -417,18 +437,23 @@ public class Estacionamento {
 			}
 		}
 		if (maior2 == maior[0]) {
-			System.out.println("Moto tá em maior quantidade");
+			System.out.println("\n-------------------- MaiorQuantidade -----------------");
+			System.out.println("\nMoto tá em maior quantidade");
 		}
 		if (maior2 == maior[1]) {
-			System.out.println("Carro tá em maior quantidade");
+			System.out.println("\n-------------------- MaiorQuantidade -----------------");
+			System.out.println("\nCarro tá em maior quantidade");
 		}
 		if (maior2 == maior[2]) {
-			System.out.println("Caminhão tá em maior quantidade");
+			System.out.println("\n-------------------- MaiorQuantidade -----------------");
+			System.out.println("\nCaminhão tá em maior quantidade");
 		}
 		if (maior2 == maior[3]) {
-			System.out.println("Ônibus tá em maior quantidade");
+			System.out.println("\n-------------------- MaiorQuantidade -----------------");
+			System.out.println("\nÔnibus tá em maior quantidade");
 		}
-		System.out.println("Maior Quantidade de Veiculos: " +maior2);
+		System.out.println("Quantidade de Veiculos: " +maior2);
+		System.out.println("------------------------------------------------------\n");
 	} 
 	
 	
@@ -440,7 +465,10 @@ public class Estacionamento {
 				ValorTotalFrota += Estacionamentos.get(i).getValor();
 			}
 		}
+		System.out.println("\n-------------------- ValorTotalFrota -----------------");
 		System.out.printf("\nValor Total da Frota: %.2f", (ValorTotalFrota));
+		System.out.println();
+		System.out.println("------------------------------------------------------\n");
 		System.out.println();
 	}
 	
@@ -457,7 +485,7 @@ public class Estacionamento {
 	public void VeiculosCadastrados() {
 		for (int i = 0; i < Estacionamentos.size(); i++) {
 			if (Estacionamentos.get(i) == null) {
-				System.out.println("Sem nenhum Veiculo Cadastrado");
+				System.out.println("\nSem nenhum Veiculo Cadastrado");
 			}
 			else {
 				Estacionamentos.get(i).InformacoesVeiculos();
